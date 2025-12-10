@@ -20,17 +20,31 @@ public class Ejemplo061 {
         // Declarar y generar arreglos en Java
         Scanner entrada = new Scanner(System.in);
         String dato;
+        String vocal;
         // arreglo de tipo entero
         String[] arreglo1 = new String[5]; //  se guardaran nombres de personas
         
         // Se asigna valores al arreglo, pidiendo valores por teclado
         // se usa un ciclo repetitivo
         for (int i = 0; i < arreglo1.length; i++) {
-            System.out.println("Ingrese un valor para el arreglo");
+            System.out.println("Ingrese un palabra que inicie con una"
+                    + "vocal para el arreglo");
             dato = entrada.nextLine();
+            vocal = dato.substring(0,1);
+            vocal = vocal.toLowerCase();
+            switch(vocal){
+                case "a":
+                case "e":
+                case "i":
+                case "o":
+                case "u":
+                    arreglo1[i] = dato;
+                    break;
+                default:
+                    arreglo1[i]= "invalido";
+            }
             // se asigna la variable dato a la posición del arreglo
             // de acuerdo al valor de i
-            arreglo1[i] = dato;
         }
         
         // Se hace uso del ciclo repetitivo for para recorrer el arreglo
